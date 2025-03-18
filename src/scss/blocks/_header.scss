@@ -1,0 +1,80 @@
+@use '../base/mixins.scss' as *;
+
+.header {
+    background-color: var(--header-bg);
+    display: block;
+    position: relative;
+    z-index: 999;
+    &__row {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+
+        @include mobileSm () {
+            height: 50px;
+        }
+
+        @include mobileSmH () {
+            height: 40px;
+        }
+    }
+
+    &__logo {
+        width: 70px;
+        height: 70px;
+        transition: all 0.2s ease-in;
+
+        @include mobileSm () {
+            width: 50px;
+            height: 50px;
+        }
+
+        @include mobileSmH () {
+            width: 40px;
+            height: 40px;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0px 0px 5px var(--text-color-white));
+        }
+    }
+
+    &__title {
+        font-size: clamp(20px,5vw,50px);
+        font-weight: 700;
+        color: var(--text-color);
+        padding-bottom: 6px;
+        text-align: center;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+            color: var(--text-color-white);
+        }
+    }
+
+    &__rules {
+        display: block;
+        z-index: 999;
+        font-size: clamp(16px,2vw,24px);
+        text-transform: uppercase;
+        color: var(--text-color);
+        transition: all 0.2s ease-in;
+        cursor: pointer;
+    }
+}
+
+@media (hover:hover) {
+    .header__rules:hover {
+        color: var(--text-color-white);
+        transform: scale(1.1);
+    } 
+}
+@media (hover:none) {
+    .header__rules:active{
+        color: var(--text-color-white);
+        transform: scale(1.1);
+    } 
+}

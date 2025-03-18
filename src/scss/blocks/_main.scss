@@ -1,0 +1,39 @@
+@use '../base/mixins.scss' as *;
+.basic {
+    background-color: var(--bg-color);
+    position: relative;
+
+    &__bg {
+        object-fit: cover;
+        object-position: center center;
+        width: 100%;
+        height: calc(100vh - 70px);
+
+        @include mobileSm () {
+            height: calc(100vh - 50px);
+        }
+
+        @include mobileSmH () {
+            height: calc(100vh - 40px);
+        }
+    }
+
+    &__row {
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    &__title {
+        font-size: clamp(35px,5vw,52px);
+        font-weight: 700;
+        color: var(--text-color);
+        text-shadow: 1px 1px 2px var(--text-color-white);
+        text-transform: uppercase;
+        padding-bottom: 6px;
+        text-align: center;
+    }
+}

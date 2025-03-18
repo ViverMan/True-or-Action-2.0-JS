@@ -1,0 +1,79 @@
+@use '../base/mixins.scss' as *;
+.questions__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 10px;
+
+    @include mobileSmH () {
+        gap: 12px;
+    }
+}
+
+.questionsTrue__text-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(39,34,34,.7);
+    border-radius: 15px;
+}
+
+.questions-text {
+    font-size: clamp(20px,5vw,28px);
+    color: var(--text-color);
+    font-family: var(--font-text);
+    transition: all 1s ease-in;
+}
+
+.questionsTrue__btn-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-game {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    min-width: 200px;
+    width: auto;
+    background-color: rgba(0,17,255,.5);
+    border-radius: 15px 3px;
+    border: 1px solid var(--text-color);
+
+    color: var(--text-color-white);
+    font-size: clamp(20px,5vw,28px);
+    font-weight: 800;
+    transition: all 0.2s ease-in; 
+
+    @include mobileSmH () {
+        padding: 4px;
+    }
+}
+
+.btn-back {
+    font-size: clamp(24px,5vw,32px);
+}
+
+@media (hover:hover) {
+    .btn-game:hover {
+        box-shadow: 3px 2px 10px var(--text-color);
+        transform: scale(1.05);
+    }
+}
+@media (hover:none) {
+    .btn-game:active {
+        box-shadow: 3px 2px 10px var(--text-color);
+        transform: scale(1.05);
+    }
+}
