@@ -1,76 +1,87 @@
-@use '../base/mixins.scss' as *;
+@use "../base/mixins.scss" as *;
 .difficulty {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-    align-items: center;
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	flex-direction: column;
+	gap: 30px;
+	text-align: center;
+	align-items: center;
 
-    @include mobileSmH () {
-        gap: 10px;
-        margin-top: 30px;
-    }
+	@include mobileSmH() {
+		gap: 10px;
+		margin-top: 30px;
+	}
 
-    &__title {
-        font-size: clamp(25px,5vw,50px);
-        font-weight: 700;
-        color: var(--text-color-white);
-        text-align: center;
-    }
+	&__title {
+		font-size: clamp(25px, 5vw, 50px);
+		font-weight: 700;
+		color: var(--text-color-white);
+		text-align: center;
+	}
 
-    &__btn-wrapper {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
+	&__btn-wrapper {
+		display: flex;
+		gap: 20px;
+		justify-content: center;
 
-        @include mobileSm () {
-            flex-direction: column;
-            gap: 10px;
-        }
-    }
+		@include mobileSm() {
+			flex-direction: column;
+			gap: 10px;
+		}
+	}
 
-    &__btn {
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        text-align: center;
-        padding: 10px;
-        width: 200px;
-        background-color: rgba(0,17,255,.5);
-        border-radius: 15px 3px;
-        border: 1px solid var(--text-color);
+	&__btn {
+		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		text-align: center;
+		padding: 10px;
+		width: 200px;
+		background-color: rgba(0, 17, 255, 0.5);
+		border-radius: 15px 3px;
+		border: 1px solid var(--text-color);
 
-        color: var(--text-color-white);
-        font-size: clamp(20px,5vw,28px);
-        font-weight: 800;
-        text-transform: uppercase;
+		color: var(--text-color-white);
+		font-size: clamp(20px, 5vw, 28px);
+		font-weight: 800;
+		text-transform: uppercase;
 
-        transition: all .2s ease-in;
+		transition: all 0.2s ease-in;
 
-        @include mobileSmH () {
-            padding: 4px;
-        }
+		@include mobileSmH() {
+			padding: 4px;
+		}
 
-        &:hover:hover {
-            -webkit-box-shadow: 3px 2px 10px var(--text-color);
-            box-shadow: 3px 2px 10px var(--text-color);
-            transform: scale(1.05);
-            transition: all 0.2s ease-in;
-        }  
-    }
+		&:hover:hover {
+			-webkit-box-shadow: 3px 2px 10px var(--text-color);
+			box-shadow: 3px 2px 10px var(--text-color);
+			transform: scale(1.05);
+			transition: all 0.2s ease-in;
+		}
+	}
 
-    &__link {
-        font-size: clamp(35px,5vw,52px);
-        color: var(--text-color-white);
-        transition: all 0.2s ease-in;
+	&__link {
+		font-size: clamp(35px, 5vw, 52px);
+		color: var(--text-color-white);
 
-        &:hover {
-            text-shadow: #fff 3px 2px 10px;
-        }
-    }
+		background-color: hsla(0, 0%, 11%, 0.25);
+		box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.3) inset, 0 0.5em 1em rgba(0, 0, 0, 0.5);
+		border-radius: 10px;
+		padding: 0px 30px 10px 30px;
+		transition: all 0.2s ease-in;
+
+		margin-top: 40px;
+
+		@include mobileSmH() {
+			margin-top: 20px;
+		}
+
+		&:hover {
+			text-shadow: #fff 3px 2px 10px;
+		}
+	}
 }

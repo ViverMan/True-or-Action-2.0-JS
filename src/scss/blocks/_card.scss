@@ -1,50 +1,58 @@
-@use '../base/mixins.scss' as *;
+@use "../base/mixins.scss" as *;
 
 .basic__cards-wrapper {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+	display: flex;
+	gap: 20px;
+	justify-content: center;
 
-    @include mobileSm () {
-        gap: 10px;
-    }
+	@include mobileSm() {
+		gap: 10px;
+	}
 }
 
 .basic__card {
-    position: relative;
-    transition: all 0.2s ease-in;
-    border-radius: 10px;
+	position: relative;
+	transition: all 0.2s ease-in;
+	border: 1px solid var(--text-color-white);
+	border-radius: 10px;
 
-    &:hover {
-        transform: scale(1.03);
-        box-shadow: rgb(255, 255, 255) 1px 1px 10px;
-    }
+	&:hover {
+		transform: scale(1.03);
+		box-shadow: rgb(255, 255, 255) 1px 1px 10px;
+	}
 
-    &-img {
-        position: relative;
-        height: 300px;
-        width: 100%;
-        border-radius: 10px;
-        border: 1px solid var(--text-color);
-        object-fit: cover;
-        object-position: center center;
+	&-img {
+		position: relative;
+		height: 300px;
+		width: 100%;
+		border-radius: 10px;
+		// border: 1px solid var(--text-color-white);
+		object-fit: cover;
+		object-position: center center;
 
-        @include mobileSmH () {
-            height: 150px;
-        }
-    }
+		@include mobileSmH() {
+			height: 150px;
+		}
 
-    &-title {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: clamp(18px,2vw,26px);
-        font-weight: 700;
-        color: var(--text-color-white);
-        text-shadow: 1px 1px 2px var(--text-color);
-        text-transform: uppercase;
-        padding-bottom: 6px;
-        text-align: center;
-    }
+		@include mobileSm() {
+			max-height: 180px;
+		}
+	}
+
+	&-title {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: clamp(18px, 2vw, 26px);
+		font-weight: 700;
+		color: var(--text-color-white);
+		text-shadow: 1px 1px 2px var(--text-color);
+		text-transform: uppercase;
+		background-color: hsla(0, 0%, 11%, 0.25);
+		box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.3) inset, 0 0.5em 1em rgba(0, 0, 0, 0.6);
+		border-radius: 10px;
+		padding: 10px;
+		text-align: center;
+	}
 }

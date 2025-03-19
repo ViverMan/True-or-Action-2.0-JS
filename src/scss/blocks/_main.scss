@@ -1,39 +1,58 @@
-@use '../base/mixins.scss' as *;
+@use "../base/mixins.scss" as *;
 .basic {
-    background-color: var(--bg-color);
-    position: relative;
+	background-color: var(--bg-color);
+	position: relative;
 
-    &__bg {
-        object-fit: cover;
-        object-position: center center;
-        width: 100%;
-        height: calc(100vh - 70px);
+	&__bg {
+		object-fit: cover;
+		object-position: center center;
+		width: 100%;
+		height: calc(100vh - 70px);
 
-        @include mobileSm () {
-            height: calc(100vh - 50px);
-        }
+		@include mobileSm() {
+			height: calc(100vh - 50px);
+		}
 
-        @include mobileSmH () {
-            height: calc(100vh - 40px);
-        }
-    }
+		@include mobileSmH() {
+			height: calc(100vh - 40px);
+		}
 
-    &__row {
-        width: 90%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
+		// background: hsla(0, 0%, 65%, 0.25) border-box;
+		// -webkit-filter: blur(20px);
+		// filter: blur(5px);
+	}
 
-    &__title {
-        font-size: clamp(35px,5vw,52px);
-        font-weight: 700;
-        color: var(--text-color);
-        text-shadow: 1px 1px 2px var(--text-color-white);
-        text-transform: uppercase;
-        padding-bottom: 6px;
-        text-align: center;
-    }
+	&__row {
+		width: 90%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		display: flex;
+		justify-content: center;
+		text-align: center;
+	}
+
+	&__title {
+		font-size: clamp(26px, 5vw, 52px);
+		font-weight: 700;
+		color: var(--text-color-white);
+		// text-shadow: 0.5px 2px 3px var(--text-color-white);
+		text-transform: uppercase;
+		background-color: hsla(0, 0%, 65%, 0.25);
+		box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.3) inset, 0 0.5em 1em rgba(0, 0, 0, 0.6);
+		border-radius: 10px;
+		padding: 10px 20px;
+		text-align: center;
+		justify-content: center;
+		margin: 0 auto;
+
+		margin-bottom: 20px;
+		width: fit-content;
+
+		@include mobileSm() {
+			margin-bottom: 30px;
+		}
+	}
 }
