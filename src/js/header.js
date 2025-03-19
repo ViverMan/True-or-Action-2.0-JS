@@ -6,8 +6,6 @@ function header() {
     const title = data.header.title
     const rules = data.header.rules
     const alt = data.header.logo.alt
-    // const imgUrl = data.header.logo.img
-    const link = data.header.linkText
 
     const header = document.createElement('header');
     header.classList.add('header');
@@ -21,9 +19,12 @@ function header() {
     headerContainer.appendChild(headerRow);
 
     const headerLink = document.createElement('a');
-    headerLink.setAttribute('href', link);
     headerLink.classList.add('header__link');
     headerRow.appendChild(headerLink);
+
+    headerLink.addEventListener('click', function () {
+        location.reload();
+    });
 
     const headerLogo = document.createElement('img');
     headerLogo.classList.add('header__logo');
@@ -32,10 +33,13 @@ function header() {
     headerLink.appendChild(headerLogo);
 
     const headerTitle = document.createElement('a');
-    headerTitle.setAttribute('href', link);
     headerTitle.classList.add('header__title');
     headerTitle.textContent = title;
     headerRow.appendChild(headerTitle);
+
+    headerTitle.addEventListener('click', function () {
+        location.reload();
+    });
 
     const headerRules = document.createElement('button');
     headerRules.classList.add('header__rules');
